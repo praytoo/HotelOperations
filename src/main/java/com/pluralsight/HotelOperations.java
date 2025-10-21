@@ -19,8 +19,17 @@ public class HotelOperations {
         Employee employee2 = new Employee(99.00, "0923", "Saint", "Software Dev", 48);
         employee2.punchIn(10);
         employee2.punchOut(14);
-        System.out.println("Updated hours: " + employee2.getTotalPay());
+        System.out.println("Updated pay: " + employee2.getTotalPay());
 
+        Employee employee3 = new Employee(99.00, "0923", "Saint", "Software Dev", 36);
+        employee3.punchIn(9.0);
+        employee3.punchOut(17.0);
+        System.out.println("Updated pay: " + employee3.getTotalPay());
+
+        Employee employee4 = new Employee(99.00, "0923", "Saint", "Software Dev", 67);
+        employee4.punchIn();
+        employee4.punchOut();
+        System.out.println("Updated pay: " + employee4.getTotalPay());
 
 
     }

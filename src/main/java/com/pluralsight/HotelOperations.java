@@ -34,7 +34,7 @@ public class HotelOperations {
         Hotel hotel1 = new Hotel("Prince", 3, 0);
         System.out.println("Suite availability: " + hotel1.getAvailableSuites());
 
-        Hotel hotel2 = new Hotel("Prince", 7, 5, 6,5);
+        Hotel hotel2 = new Hotel("Saint", 7, 5, 6,5);
         System.out.println("Suite availability: " + hotel2.getAvailableSuites() + " " + "Room availability: " + hotel2.getAvailableRooms());
     }
 }

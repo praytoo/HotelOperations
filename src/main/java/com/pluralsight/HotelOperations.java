@@ -15,5 +15,14 @@ public class HotelOperations {
         double hours = employee1.getRegularHours();
         double overtime = employee1.getOvertimeHours();
         System.out.println("Your employee wage & hours: $" + pay + " " + hours + " " + overtime);
+
+        Employee employee2 = new Employee(99.00, "0923", "Saint", "Software Dev", 48);
+        System.out.println("Updated hours: " + (employee2.punchTimeCard(10) + employee2.punchTimeCard(14)));
+
+        Room room2 = new Room(2, 139.00, false, false);
+        boolean checkin = room2.checkIn();
+        boolean checkout = room1.checkOut();
+        boolean cleanroom = room2.cleanRoom();
+        System.out.println("Room update: " + checkin + " " + checkout + " " + cleanroom);
     }
 }

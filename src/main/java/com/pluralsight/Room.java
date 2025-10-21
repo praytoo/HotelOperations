@@ -26,6 +26,18 @@ public class Room {
         return !isDirty() && !isOccupancy();
     }
 
+    public boolean checkIn(){
+        return isOccupancy() && isDirty();
+    }
+
+    public boolean checkOut(){
+        return cleanRoom();
+    }
+
+    public boolean cleanRoom(){
+        return !isDirty();
+    }
+
     public Room(int beds, double price, boolean occupancy, boolean dirty) {
         this.beds = beds;
         this.price = price;

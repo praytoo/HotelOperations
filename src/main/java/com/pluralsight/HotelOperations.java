@@ -17,7 +17,11 @@ public class HotelOperations {
         System.out.println("Your employee wage & hours: $" + pay + " " + hours + " " + overtime);
 
         Employee employee2 = new Employee(99.00, "0923", "Saint", "Software Dev", 48);
-        System.out.println("Updated hours: " + (employee2.punchTimeCard(10) + employee2.punchTimeCard(14)));
+        employee2.punchIn(10);
+        employee2.punchOut(14);
+        System.out.println("Updated hours: " + employee2.getTotalPay());
+
+
 
     }
 }

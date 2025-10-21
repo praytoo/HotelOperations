@@ -26,16 +26,17 @@ public class Room {
         return !isDirty() && !isOccupancy();
     }
 
-    public boolean checkIn(){
-        return isOccupancy() && isDirty();
+    public void checkIn(){
+    dirty = true;
+    occupancy = true;
     }
 
-    public boolean checkOut(){
-        return cleanRoom();
+    public void checkOut(){
+        occupancy = false;
     }
 
-    public boolean cleanRoom(){
-        return !isDirty();
+    public void cleanRoom(){
+        dirty = false;
     }
 
     public Room(int beds, double price, boolean occupancy, boolean dirty) {

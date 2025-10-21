@@ -31,6 +31,10 @@ public class HotelOperations {
         employee4.punchOut();
         System.out.println("Updated pay: " + employee4.getTotalPay());
 
+        Hotel hotel1 = new Hotel("Prince", 3, 0);
+        System.out.println("Suite availability: " + hotel1.getAvailableSuites());
 
+        Hotel hotel2 = new Hotel("Prince", 7, 5, 6,5);
+        System.out.println("Suite availability: " + hotel2.getAvailableSuites() + " " + "Room availability: " + hotel2.getAvailableRooms());
     }
 }

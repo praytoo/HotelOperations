@@ -26,7 +26,7 @@ class EmployeeTest {
     }
 
     @Test
-    void punchOut() {
+    void punchOut_CorrectTime() {
         //arrange
         employee.punchIn(10);
         double expectedPunchOut = 71;

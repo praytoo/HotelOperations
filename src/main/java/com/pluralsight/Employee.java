@@ -9,8 +9,6 @@ public class Employee {
     private double payRate;
     private double hoursWorked;
     private double startTime;
-    private double punchIn;
-    private double punchOut;
     //private double punchTimeCard;
 
     public Employee(double payRate, String employeeId, String name, String department, double hoursWorked) {
@@ -21,6 +19,13 @@ public class Employee {
         this.hoursWorked = hoursWorked;
     }
 
+    public double getStartTime(){
+        return startTime;
+    }
+
+    public double getHoursWorked(){
+        return hoursWorked;
+    }
     public double getTotalPay(){
         return payRate * hoursWorked;
     }
@@ -41,14 +46,12 @@ public class Employee {
 
     public void punchIn(double time) {
         startTime = time;
-        hoursWorked += (punchOut - punchIn);
     }
 
     public void punchOut() {
         LocalDateTime now = LocalDateTime.now();
         int hour = now.getHour();
         int minute = now.getMinute();
-        hoursWorked += (punchOut - punchIn);
     }
 
     public void punchOut(double time) {

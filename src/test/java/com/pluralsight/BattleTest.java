@@ -11,7 +11,7 @@ class BattleTest {
 
     @BeforeEach
     void init(){
-        battle = new Battle("Prince", 100, "Draco", 120);
+        battle = new Battle("Prince", 100, "Drako", 120);
     }
     @Test
     void getAttackerHp() {
@@ -19,10 +19,10 @@ class BattleTest {
         int expectedAttackerHp = 100;
 
         //act
-        battle.getAttackerHp();
+        int attackerHp = battle.getAttackerHp();
 
         //assert
-        assertEquals(expectedAttackerHp,battle.getAttackerHp());
+        assertEquals(expectedAttackerHp,attackerHp);
     }
 
     @Test
@@ -31,10 +31,10 @@ class BattleTest {
         int expectedDefenderHp = 120;
 
         //act
-        battle.getDefenderHp();
+        int defernderHp = battle.getDefenderHp();
 
         //assert
-        assertEquals(expectedDefenderHp,battle.getDefenderHp());
+        assertEquals(expectedDefenderHp,defernderHp);
     }
 
     @Test
@@ -44,7 +44,7 @@ class BattleTest {
         int expectedHp = 100;
 
         //act
-        battle.performAttack(20);
+        battle.performAttack(damage);
 
         //assert
         assertEquals(expectedHp, battle.getDefenderHp());
@@ -53,11 +53,11 @@ class BattleTest {
     @Test
     void performCounterAttack() {
         //arrange
-        int damage = 20;
+        int damage = 10;
         int expectedHp = 90;
 
         //act
-        battle.performCounterAttack(10);
+        battle.performCounterAttack(damage);
 
         //assert
         assertEquals(expectedHp, battle.getAttackerHp());
@@ -70,7 +70,7 @@ class BattleTest {
         int expectedHp = 0;
 
         //act
-        battle.performAttack(130);
+        battle.performAttack(damage);
 
         //assert
         assertEquals(expectedHp, battle.getDefenderHp());
@@ -83,7 +83,7 @@ class BattleTest {
         int expectedHp = 0;
 
         //act
-        battle.performCounterAttack(110);
+        battle.performCounterAttack(damage);
 
         //assert
         assertEquals(expectedHp, battle.getAttackerHp());
@@ -96,7 +96,7 @@ class BattleTest {
         boolean expectedBattleOver = true;
 
         //act
-        battle.performAttack(130);
+        battle.performAttack(damageDefender);
         battle.isBattleOver();
 
         //assert
@@ -106,8 +106,6 @@ class BattleTest {
     @Test
     void getWinner() {
         //arrange
-        int currentAttackerHp = 40;
-        int currentDefenderHp = 0;
         String winner = "Prince";
 
         //act
@@ -122,8 +120,6 @@ class BattleTest {
     @Test
     void getWinner2() {
         //arrange
-        int currentAttackerHp = 60;
-        int currentDefenderHp = 20;
         String winner = null;
 
         //act
